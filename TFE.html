@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1">
+        <title>ASML TFE</title>
+        <!-- Linked style.css for CSS -->
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Header -->
+        <img class="logoIMG" align="left" src="Images/ASML_logo_white.png">
+        <h1>TFE Interface</h1>
+        
+        <!-- Code for system temperature -->
+        <h4>
+            System Temp:
+            <span class="temp">75 &#8457</span>     <!-- &#8457 is the HTML fahrenheit symbol -->
+        </h4>
+        
+        <!-- Code to control the LED1 -->
+        <div>
+            <span>
+                Off/On:
+                <label class="switch">
+                    <input id="toggleBtn1" type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </span>
+            <span class="labels">LED 1: </span>
+            <button disabled class="button" id="decrease1" onclick="decrease1()">-</button>
+            <span class="percent" id="percent1">0%</span>
+            <button disabled class="button" id="increase1" onclick="increase1()">+</button>
+        </div>
+        
+        <!-- Code to control LED2 -->
+        <div>
+            <span>
+                Off/On:
+                <label class="switch">
+                    <input id="toggleBtn2" type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </span>
+            <span class="labels">LED 2: </span>
+            <button disabled class="button" id="decrease2" onclick="decrease2()">-</button>
+            <span class="percent" id="percent2">0%</span>
+            <button disabled class="button" id="increase2" onclick="increase2()">+</button>
+        </div>
+        
+        <!-- System reset button -->
+        <!-- Turns both LEDs off (at the moment) -->
+        <div>
+            <button class="systemRST" onclick="RST()">Reset</button>
+        </div>
+        
+        <footer>
+            SDSU Senior Design 2023 | Team 12
+        </footer>
+        
+        <!-- Linked script.js for Javascript -->
+        <script src="script.js"></script>
+    </body>
+</html>
