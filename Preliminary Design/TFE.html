@@ -31,7 +31,7 @@
                     <span class="slider round"></span>
                 </label>
             </span>
-            <span class="labels">LED 1: </span>
+            <span class="labels">BLM 1: </span>
             <button disabled class="button" id="decrease1" onclick="decrease1()">-</button>
             <span class="percent" id="percent1">0%</span>
             <button disabled class="button" id="increase1" onclick="increase1()">+</button>
@@ -46,10 +46,17 @@
                     <span class="slider round"></span>
                 </label>
             </span>
-            <span class="labels">LED 2: </span>
+            <span class="labels">BLM 2: </span>
             <button disabled class="button" id="decrease2" onclick="decrease2()">-</button>
             <span class="percent" id="percent2">0%</span>
             <button disabled class="button" id="increase2" onclick="increase2()">+</button>
+        </div>
+        
+        <!-- Display Start/Stop buttons -->
+        <div>
+            Image Stream: 
+            <button class="displayBtn" id="disable1" onclick="disableStart()">Start</button>
+            <button disabled class="displayBtn2" id="disable2" onclick="disableStop()">Stop</button>
         </div>
         
         <!-- System reset button -->
@@ -57,7 +64,7 @@
         <div>
             <button class="systemRST" onclick="RST()">Reset</button>
         </div>
-        
+
         <footer>
             SDSU Senior Design 2023 | Team 12
         </footer>

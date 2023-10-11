@@ -6,6 +6,8 @@ const button2 = document.getElementById("increase1");
 const toggleBtn2 = document.getElementById("toggleBtn2");
 const button3 = document.getElementById("decrease2");
 const button4 = document.getElementById("increase2");
+const button5 = document.getElementById("disable1");
+const button6 = document.getElementById("disable2");
 var percentValue1 = 30;
 var percentValue2 = 30;
 
@@ -85,4 +87,18 @@ function RST() {
     button2.disabled = true;
     button3.disabled = true;
     button4.disabled = true;
+    button5.disabled = false;
+    button6.disabled = true;
+}
+
+// Function to disable start btn
+function disableStart() {
+    button5.disabled = true;
+    button6.disabled = false;
+}
+
+// Function to disable stop btn
+function disableStop() {
+    button6.disabled = true;
+    button5.disabled = false
 }

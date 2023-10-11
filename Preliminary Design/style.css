@@ -150,6 +150,48 @@ input:checked + .slider:before {
     background-color: darkred;
 }
 
+.displayBtn {
+    padding: 5px;
+    font-size: 18px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    margin-right: 5px;
+}
+
+.displayBtn:hover {
+    background-color: darkgreen;
+}
+
+.displayBtn:disabled {
+    background-color: #aaaaaa;
+    cursor: default;
+}
+
+.displayBtn2 {
+    padding: 5px;
+    font-size: 18px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    margin-right: 5px;
+}
+
+.displayBtn2:hover {
+    background-color: darkred;
+}
+
+.displayBtn2:disabled {
+    background-color: #aaaaaa;
+    cursor: default;
+}
+
 footer {
     position: absolute;
     bottom: 0;
