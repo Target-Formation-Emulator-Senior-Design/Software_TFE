@@ -1,5 +1,7 @@
 var percentElement1 = document.getElementById("percent1");
 var percentElement2 = document.getElementById("percent2");
+var tempElement = document.getElementById("temp");
+var humElement = document.getElementById("hum");
 const toggleBtn1 = document.getElementById("toggleBtn1");
 const button1 = document.getElementById("decrease1");
 const button2 = document.getElementById("increase1");
@@ -10,6 +12,36 @@ const button5 = document.getElementById("disable1");
 const button6 = document.getElementById("disable2");
 var percentValue1 = 30;
 var percentValue2 = 30;
+var tempValue = 75.0;
+var humValue = 50.0;
+
+// Function to increase temp
+function tempUpdate() {
+    if(tempValue < 80 & tempValue >= 65) {
+        tempValue += 1.5;
+        tempElement.innerHTML = tempValue;
+    }
+    else{
+        tempValue -= 1.5;
+        tempElement.innerHTML = tempValue;
+    }
+}
+
+// Function to increase humidity
+function humUpdate() {
+    if(humValue < 80 & humValue >= 40) {
+        humValue += 0.5;
+        humElement.innerHTML = humValue;
+    }
+    else{
+        humValue -= 0.5;
+        humElement.innerHTML = humValue;
+    }
+}
+
+// Refreshes values
+setInterval(tempUpdate, 2000);
+setInterval(humUpdate, 2000);
 
 // Function to increase LED1 brightness
 function increase1() {
