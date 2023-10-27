@@ -2,6 +2,7 @@ var percentElement1 = document.getElementById("percent1");
 var percentElement2 = document.getElementById("percent2");
 var tempElement = document.getElementById("temp");
 var humElement = document.getElementById("hum");
+
 const toggleBtn1 = document.getElementById("toggleBtn1");
 const button1 = document.getElementById("decrease1");
 const button2 = document.getElementById("increase1");
@@ -10,6 +11,7 @@ const button3 = document.getElementById("decrease2");
 const button4 = document.getElementById("increase2");
 const button5 = document.getElementById("disable1");
 const button6 = document.getElementById("disable2");
+
 var percentValue1 = 30;
 var percentValue2 = 30;
 var tempValue = 75.0;
@@ -22,7 +24,7 @@ function tempUpdate() {
         tempElement.innerHTML = tempValue;
     }
     else{
-        tempValue -= 1.5;
+        tempValue -= 15;
         tempElement.innerHTML = tempValue;
     }
 }
@@ -34,14 +36,14 @@ function humUpdate() {
         humElement.innerHTML = humValue;
     }
     else{
-        humValue -= 0.5;
+        humValue -= 30;
         humElement.innerHTML = humValue;
     }
 }
 
 // Refreshes values
-setInterval(tempUpdate, 2000);
-setInterval(humUpdate, 2000);
+setInterval(tempUpdate, 1500);
+setInterval(humUpdate, 1500);
 
 // Function to increase LED1 brightness
 function increase1() {
