@@ -7,4 +7,4 @@ RPi terminal commands for software setup:
 
 For remote access:
 - Download RealVNC viewer (make an account for the lite version)
-- Open RealVNC veiwer, login and enter RPi info
+- Open RealVNC viewer, login and enter RPi info
