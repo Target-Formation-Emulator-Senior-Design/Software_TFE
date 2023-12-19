@@ -1,4 +1,6 @@
 # Software_TFE
+Software code for TFE data acquisistion webpage.
+
 RPi terminal commands for software setup:
 - sudo apt-get install python3-dev python3-pip
 - sudo python3 -m pip install --upgrade pop setuptools wheel
