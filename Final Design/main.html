@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="initial-scale=1">
+        <title>ASML TFE</title>
+
+        <!-- html style -->
+        <style type="text/css" media="screen">
+            body {
+                background-color: #DDDDDD;
+            }
+
+            h1 {
+                text-align: center;
+                margin-bottom: -15px;
+                margin-left: -8px;
+                margin-top: -8px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                background-color: #0f238c;
+                color: white;
+                width: 100vw;
+            }
+
+            h4 {
+                text-align: right;
+                margin-bottom: -10px;
+            }
+
+            div {
+                text-align: center;
+                margin-top: 15px;
+                margin-bottom: 10px;
+            }
+
+            .logoIMG {
+                height: 30px;
+                position: fixed;
+                margin-top: 12px;
+                margin-left: 5px;
+            }
+
+            .labels {
+                margin-left: 10px;
+                font-size: 30px;
+                font-weight: bold;
+            }
+
+            .temp {
+                padding: 2px;
+                font-size: 17px;
+                font-weight: bold;
+                background-color: whitesmoke;
+                border: 1px solid black;
+                border-radius: 4px;
+            }
+
+            .percent {
+                padding: 2px;
+                margin-left: 10px;
+                margin-right: 10px;
+                font-size: 30px;
+                font-weight: bold;
+                background-color: whitesmoke;
+                border: 2px solid black;
+                border-radius: 8px;
+            }
+
+            footer {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                left: 0px;
+                text-align: center;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                background-color: black;
+                color: white;
+            }
+
+        </style>
+    </head>
+    <body>
+        <!-- Header -->
+        <img class="logoIMG" align="left" src="C:\Users\Ryan Tran\Documents\Software_TFE\Images\ASML_logo_white.png">
+        <h1>TFE Interface</h1>
+        
+        <!-- Code for system temperature -->
+        <h4>
+            System Temp(&#8451):
+            <span class="temp" id="temp">?</span>     <!-- &#8457 is the HTML fahrenheit symbol -->
+            <h4>
+                Humidity(%): 
+                <span class="temp" id="hum">?</span>
+            </h4>
+            <h4>
+                CPU Temp(&#8451): 
+                <span class="temp" id="CPUtemp">?</span>
+            </h4>
+            <h4>
+                LCD Freq(Hz): 
+                <span class="temp" id="lcdFreq">?</span>
+            </h4>
+        </h4>
+
+        <!-- Code for Backlight LEDs -->
+        <div>
+            <span class="labels">Left BLM: </span>
+            <span class="percent" id="percent1">?</span>
+        </div>
+        <div>
+            <span class="labels">Right BLM: </span>
+            <span class="percent" id="percent2">?</span>
+        </div>
+        <div>
+            <span class="labels">Date/Time: </span>
+            <span class="percent" id="dateTime">?</span>
+        </div>
+
+        <!-- footer -->
+        <footer>
+            SDSU Senior Design 2023 | Team 12
+        </footer>
+    </body>
+
+    <!-- Script to send data to webpage -->
+    <script>
+        setInterval(function connectData() {
+            fetch('Data2.csv')
+            .then(response => response.text())
+            .then(text => {
+                var data_row = text.split("\n")
+                var data = data_row.map(row => row.split(","));
+
+                document.getElementById("percent1").innerHTML = data[data.length - 2][5] + "%";
+                document.getElementById("percent2").innerHTML = data[data.length - 2][4] + "%";
+                document.getElementById("temp").innerHTML = data[data.length - 2][2];
+                document.getElementById("hum").innerHTML = data[data.length - 2][3];
+                document.getElementById("CPUtemp").innerHTML = data[data.length - 2][1];
+                document.getElementById("dateTime").innerHTML = data[data.length - 2][0];
+                document.getElementById("lcdFreq").innerHTML = data[data.length - 2][6];
+            })
+        }, 2000);
+    </script>
+</html>

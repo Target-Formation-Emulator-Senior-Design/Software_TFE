@@ -19,14 +19,23 @@ var humValue = 50.0;
 
 // Function to increase temp
 function tempUpdate() {
-    if(tempValue < 80 & tempValue >= 65) {
+    if(tempValue < 152 & tempValue >= 65) {
         tempValue += 1.5;
         tempElement.innerHTML = tempValue;
     }
     else{
-        tempValue -= 15;
+        tempValue -= 80;
         tempElement.innerHTML = tempValue;
     }
+
+    if(tempValue == 120) {
+        alert("WARNING! High System Temperature")
+    }
+
+    if(tempValue > 150) {
+        alert("ALERT! System temperature is too high.\nSystem Shut Down Imminent ")
+    }
+
 }
 
 // Function to increase humidity

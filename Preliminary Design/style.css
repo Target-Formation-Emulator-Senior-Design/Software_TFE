@@ -27,6 +27,7 @@ div {
 
 .logoIMG {
     height: 30px;
+    position: fixed;
     margin-top: 12px;
     margin-left: 5px;
 }
