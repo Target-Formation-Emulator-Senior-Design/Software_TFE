@@ -83,13 +83,14 @@
     </head>
     <body>
         <!-- Header -->
+        <!-- Change src link to correct link after cloning to correctly display ASML logo -->
         <img class="logoIMG" align="left" src="C:\Users\Ryan Tran\Documents\Software_TFE\Images\ASML_logo_white.png">
         <h1>TFE Interface</h1>
         
         <!-- Code for system temperature -->
         <h4>
             System Temp(&#8451):
-            <span class="temp" id="temp">?</span>     <!-- &#8457 is the HTML fahrenheit symbol -->
+            <span class="temp" id="temp">?</span>     <!-- &#8451 is the HTML celcius symbol -->
             <h4>
                 Humidity(%): 
                 <span class="temp" id="hum">?</span>
@@ -104,7 +105,7 @@
             </h4>
         </h4>
 
-        <!-- Code for Backlight LEDs -->
+        <!-- Code for Backlight LEDs & Date/Time -->
         <div>
             <span class="labels">Left BLM: </span>
             <span class="percent" id="percent1">?</span>
@@ -125,6 +126,7 @@
     </body>
 
     <!-- Script to send data to webpage -->
+    <!-- setInterval(function connectData() {...}, 2000) refreshes data on the webpage every 2 seconds -->
     <script>
         setInterval(function connectData() {
             fetch('Data2.csv')
