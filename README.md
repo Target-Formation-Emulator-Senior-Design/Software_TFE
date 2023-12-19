@@ -8,7 +8,7 @@ RPi terminal commands for software setup:
 - (DEPRECATED) sudo apt-get install python3-flask 
 
 Setting up Apache2 server:
-- https://pimylifeup.com/raspberry-pi-apache/
+- Follow https://pimylifeup.com/raspberry-pi-apache/
 - Copy main.html into /var/www/html after downloading Apache2
 - To edit webpage: type sudo nano /var/www/html/main.html
 - To run webpage: type IP address/main.html (i.e.: 123.456.78.9/main.html)
