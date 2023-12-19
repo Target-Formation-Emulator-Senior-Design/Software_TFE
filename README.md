@@ -3,8 +3,8 @@ Software code for TFE data acquisistion webpage.
 
 RPi terminal commands for software setup:
 - sudo apt-get install python3-dev python3-pip
-- sudo python3 -m pip install --upgrade pop setuptools wheel
-- sudo pip3 install Adafruit_DHT
+- (FOR DHT_test.py) sudo python3 -m pip install --upgrade pop setuptools wheel
+- (For DHT_test.py) sudo pip3 install Adafruit_DHT
 - (DEPRECATED) sudo apt-get install python3-flask 
 
 Setting up Apache2 server:
