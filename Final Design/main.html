@@ -5,7 +5,7 @@
         <meta name="viewport" content="initial-scale=1">
         <title>ASML TFE</title>
 
-        <!-- html style -->
+        <!-- html CSS -->
         <style type="text/css" media="screen">
             body {
                 background-color: #DDDDDD;
@@ -87,7 +87,7 @@
         <img class="logoIMG" align="left" src="C:\Users\Ryan Tran\Documents\Software_TFE\Images\ASML_logo_white.png">
         <h1>TFE Interface</h1>
         
-        <!-- Code for system temperature -->
+        <!-- Code for temp, hum, etc. -->
         <h4>
             System Temp(&#8451):
             <span class="temp" id="temp">?</span>     <!-- &#8451 is the HTML celcius symbol -->
@@ -105,6 +105,8 @@
             <span class="temp" id="lcdFreq">?</span>
         </h4>
 
+        <br>
+
         <!-- Code for Backlight LEDs & Date/Time -->
         <div>
             <span class="labels">Left BLM: </span>
@@ -119,20 +121,20 @@
             <span class="percent" id="dateTime">?</span>
         </div>
 
-        <!-- footer -->
+        <!-- Footer -->
         <footer>
             SDSU Senior Design 2023 | Team 12
         </footer>
     </body>
 
-    <!-- Script to send data to webpage -->
+    <!-- JavaScript to send data to webpage -->
     <!-- setInterval(function connectData() {...}, 2000) refreshes data on the webpage every 2 seconds -->
     <script>
         setInterval(function connectData() {
             fetch('Data2.csv')
             .then(response => response.text())
             .then(text => {
-                var data_row = text.split("\n")
+                var data_row = text.split("\n");
                 var data = data_row.map(row => row.split(","));
 
                 document.getElementById("percent1").innerHTML = data[data.length - 2][5] + "%";
